@@ -24,4 +24,4 @@
 | **20 → 21** | `echo <password> \| nc -l -p <port>` | Bound a daemon to listen on an arbitrary port and echo a password when connected to, then used the setuid binary to communicate with this port. |
 | **21 → 22** | `cat /etc/cron.d/*, cat <script>` | Analysed a cron configuration file and its target shell script to find the specific temporary file path where the next password was being copied. |
 | **22 → 23** | `echo \| md5sum \| cut` | Analysed a cron script that dynamically generates its target password file path using an MD5 hash of the username, then replicated the hash calculation to locate the file in /tmp. |
-| **23 → 24** | [payload.sh](OverTheWire/Bandit/levels/bandit23/payload.sh) | Created a custom shell script payload, made it executable, and dropped it into a watched cron folder to trick a background daemon into copying the password to an open directory. |
+| **23 → 24** | [payload.sh](levels/bandit23/payload.sh) | Created a custom shell script payload, made it executable, and dropped it into a watched cron folder to trick a background daemon into copying the password to an open directory. |
