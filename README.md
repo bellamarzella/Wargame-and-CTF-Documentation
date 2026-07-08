@@ -6,7 +6,7 @@ A centralized repository dedicated to documenting my solutions, methodology, and
 
 ## Progress
 
-| Platform | Challenge Series | Target Focus | Progress | Status |
+| Platform | Challenge Series | Target Focus | Level Progress | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **OverTheWire** | [Bandit](./OverTheWire/Bandit/bandit.md) | Linux Basics | Levels 0 - 20 | In Progress |
-| **OverTheWire** | [Natas](./OverTheWire/Natas/natas.md) | Web Security | Levels 0 - 20 | In Progress |
+| **OverTheWire** | [Bandit](./OverTheWire/Bandit/bandit.md) | Linux Basics | Completed | Writeup In Progress |
+| **OverTheWire** | [Natas](./OverTheWire/Natas/natas.md) | Web Security | 12 | Levels + Writeup In Progress |
