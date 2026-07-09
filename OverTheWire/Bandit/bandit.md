@@ -24,4 +24,13 @@
 | **20 → 21** | `echo <password> \| nc -l -p <port>` | Bound a daemon to listen on an arbitrary port and echo a password when connected to, then used the setuid binary to communicate with this port. |
 | **21 → 22** | `cat /etc/cron.d/*, cat <script>` | Analysed a cron configuration file and its target shell script to find the specific temporary file path where the next password was being copied. |
 | **22 → 23** | `echo \| md5sum \| cut` | Analysed a cron script that dynamically generates its target password file path using an MD5 hash of the username, then replicated the hash calculation to locate the file in /tmp. |
-| **23 → 24** | [payload.sh](levels/bandit23/payload.sh) | Created a custom shell script payload, made it executable, and dropped it into a watched cron folder to trick a background daemon into copying the password to an open directory. |
+| **23 → 24** | [script](\levels\bandit23\payload.sh) | Created a custom shell script payload, made it executable, and dropped it into a watched cron folder to trick a background daemon into copying the password to an open directory. |
+| **24 → 25** | [script](\levels\bandit24\bruteForcer.sh) | Iterated 10,000 padded PIN variations through a single, continuous Netcat session to prevent connection throttling, filtering out failure messages using an inverted `grep` match to isolate the flag. |
+| **25 → 26** | `more`, `v`, `:r <file>` | Inspected `/etc/passwd` to identify a custom text-viewing shell wrapper, shrank the terminal to force `more` command, exploited a quirk of `more` to pause, escaped into Vim and used internal file-reading to read the password. |
+| **26 → 27** | `:set shell=/bin/bash` | Used the same method as level 25 → 26 to enter Vim, changed the shell and then used the setuid to read the password. |
+| **27 → 28** | `git clone` | Cloned a remote repo onto my local machine. |
+| **28 → 29** | `git log -p -- <filename>` | Inspected git history to find an exposed password. |
+| **29 → 30** | `git branch -a` | Inspected git branches to locate one with an exposed password. |
+| **30 → 31** | `git tag`, `git show <tag>` | Inspected tags to find an annotated tag containing the password. |
+| **31 → 32** | `add -f`, `commit`, `push` | Created the required key file, forced it to be staged (bypassing the `.gitignore`), committed and pushed. |
+| **32 → 33** | `$0` | Escaped a restricted shell by spawning a subshell with the positional parameter. |
