@@ -1,3 +1,5 @@
+# Bandit
+
 | Level | Command / Tool | Explanation |
 | :--- | :--- | :--- |
 | **0** | `ssh` | Connected to the remote OverTheWire server using specified credentials and port. |
