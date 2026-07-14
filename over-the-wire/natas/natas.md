@@ -1,6 +1,6 @@
 # Natas Documentation
 
-This directory documents my progress through OverTheWire's **Natas** wargame.
+This directory documents my progress through OverTheWire's **Natas** wargame. <br /> <br />
 The first 11 levels are simple enough to be consolidated into tables, but starting with level 12, the challenges become more complex and require detailed writeups to explain the vulnerabilities, exploitation techniques, and remediation strategies.
 
 ## Map
