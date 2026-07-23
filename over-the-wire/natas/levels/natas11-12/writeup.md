@@ -5,9 +5,9 @@
 * **Tools Used:** Burp Suite, CyberChef
 
 ## Summary
-The application stores access control flags client-side, in a cookie named `data`, relying on a simple, reversible XOR operation with a static key to protect it's integrity. Because the XOR operation is symmetric and the key is static, we can easily calculate the secret key to forge a cookie with elevated privileges. 
+The application stores access control flags client-side, in a cookie named `data`, relying on a simple, reversible XOR operation with a static key to protect its integrity. Because the XOR operation is symmetric and the key is static, we can easily calculate the secret key to forge a cookie with elevated privileges. 
 
-## Vulerable Code Snippet
+## Vulnerable Code Snippet
 ```php
 // The default configuration parameters stored in the cookie
 $defaultdata = array( "showpassword"=>"no", "bgcolor"=>"#ffffff");
@@ -43,7 +43,7 @@ Plaintext \oplus Key = Ciphertext \implies Key = Plaintext \oplus Ciphertext
 By choosing an arbitrary background colour and grabbing its associated cookie (`EGAgHwQ1...`), we can do the following:
 1. Construct the JSON representation of the input data: `{"showpassword":"no","bgcolor":"#ffffff"}`
 2. Find the ciphertext by base64-decoding the cookie value.
-3. XOR the plaintext and ciphertext to derive the secret key.
+3. XOR the plaintext and ciphertext to reveal the repeating key pattern, then isolate the secret key.
 
 ### Step 2: Forging the Payload
 Now we have the key, we can encrypt any JSON payload. By simply switching the `showpassword` value to `yes` and encrypting it with the derived key, we get a new ciphertext.
@@ -54,7 +54,7 @@ New\_Plaintext \oplus Key = New\_Ciphertext
 `$
 \
 \
-Base-64 encoding this results in our new malicious cookie value.
+Base64-encoding this results in our new malicious cookie value.
 
 ### Step 3: Executing the Attack
 1. We configure Burp Suite to intercept outgoing browser traffic.
@@ -63,4 +63,4 @@ Base-64 encoding this results in our new malicious cookie value.
 
 ## Remediation
 - **Store Session State Server-Side:** Never store privilege levels, access control flags or authentication states client-side. Instead, keep this information inside a secure, server-side session database and assign a randomly generated, cryptographically secure session identifier to the client. This prevents tampering and ensures that sensitive information is never exposed to the client.
-- **Used Signed or Encrypted Cookies:** If you must store information client-side, use signed or encrypted cookies with a strong cryptographic algorithm (e.g., AES) and a unique key per session. This ensures that even if the cookie is intercepted, it cannot be tampered with or decrypted without the key. 
+- **Use Signed and Encrypted Cookies:** If you must store information client-side, protect its integrity using strong cryptographic signatures (e.g., HMAC) or encrypt the payload entirely. This ensures that even if the cookie is intercepted, it cannot be tampered with or decrypted without the key. 
