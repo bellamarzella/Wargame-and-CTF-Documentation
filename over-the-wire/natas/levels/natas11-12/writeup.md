@@ -61,6 +61,6 @@ Base64-encoding this results in our new malicious cookie value.
 2. We replace the original `data` cookie with our newly forged value.
 3. Upon forwarding the request, the server decrypts our cookie, sees `showpassword` set to `yes`, and reveals the password for the next level.
 
-## Remediation
+## Remediations
 - **Store Session State Server-Side:** Never store privilege levels, access control flags or authentication states client-side. Instead, keep this information inside a secure, server-side session database and assign a randomly generated, cryptographically secure session identifier to the client. This prevents tampering and ensures that sensitive information is never exposed to the client.
 - **Use Signed and Encrypted Cookies:** If you must store information client-side, protect its integrity using strong cryptographic signatures (e.g., HMAC) or encrypt the payload entirely. This ensures that even if the cookie is intercepted, it cannot be tampered with or decrypted without the key. 

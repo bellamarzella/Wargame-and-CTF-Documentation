@@ -1,5 +1,5 @@
 # Natas Levels 0 → 5
-| Level | Vulnerability | Cause | Action | Remediation |
+| Level | Vulnerability | Cause | Action | Remediations |
 | :--- | :--- | :--- | :--- | :--- |
 | **0 → 1** | Plaintext Information Disclosure | Storing sensitive credentials in client-side HTML comments. | Opened browser **DevTools (F12)** to inspect the HTML source and read the commented-out password. | Remove all sensitive comments and credentials before deploying to production. |
 | **1 → 2** | Client-Side Security Bypass | Relying on client-side JavaScript restrictions to prevent users from viewing source code. | Bypassed the disabled right-click restriction by pressing **F12** directly (or prefixing the URL with `view-source:`) to inspect the source. | Never rely on client-side controls for security; design systems assuming the user has total control of the browser. |

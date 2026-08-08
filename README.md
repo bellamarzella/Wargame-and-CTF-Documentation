@@ -1,6 +1,6 @@
 # Security Wargames & CTF Writeups
 
-A centralised repository dedicated to documenting my solutions, methodology, and remediations for various cybersecurity challenges.
+A centralised repository dedicated to documenting my solutions, methodology, and remediation steps for various cybersecurity challenges.
 > [!NOTE]
 > I’ve completed more than just what’s shown here, but never documented it. For the moment, I’m working on retroactively documenting all the challenges I’ve already done.
 
@@ -9,4 +9,4 @@ A centralised repository dedicated to documenting my solutions, methodology, and
 | Platform | Challenge Series | Target Focus | Level Progress | Writeup Progress |
 | :--- | :--- | :--- | :--- | :--- |
 | **OverTheWire** | [Bandit](./over-the-wire/bandit/bandit.md) | Linux Basics | Completed! | Completed! |
-| **OverTheWire** | [Natas](./over-the-wire/natas/natas.md) | Web Security | 13 | Up to date |
+| **OverTheWire** | [Natas](./over-the-wire/natas/natas.md) | Web Security | 16 | Up to date |

@@ -1,5 +1,5 @@
 # Natas Levels 5 → 11
-| Level | Vulnerability | Cause | Action | Remediation |
+| Level | Vulnerability | Cause | Action | Remediations |
 | :--- | :--- | :--- | :--- | :--- |
 | **5 → 6** | Broken Authentication (Cookie Manipulation) | Relying on a client-side cookie value (`loggedin=0`) to determine authorisation status without server-side validation. | Intercepted the HTTP request in **Burp Suite**, modified the `loggedin` cookie value from `0` to `1`, and forwarded the request to reveal the password. | Never trust client-side state for authentication or authorisation; track authorisation states securely on the server side (e.g., in a secure session database). |
 | **6 → 7** | Sensitive File Exposure (Source Code Disclosure) | Storing sensitive configuration secrets in a web-accessible directory (`includes/secret.inc`) with default read permissions. | Identified the `include` file path in the source, navigated directly to `includes/secret.inc` in the browser, read the `$secret` value, and submitted it to get the password. | Store all backend configuration files, secrets, and environment variables outside of the web server's public document root. |
