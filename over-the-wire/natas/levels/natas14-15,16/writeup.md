@@ -65,7 +65,7 @@ SELECT * from users where username="..." AND BINARY SUBSTRING(password, n, 1) = 
 We use BINARY to ensure that the comparison is case-sensitive.
 
 #### Step 3: Automating with a Python Script
-Now, we can use this to crack the password by guessing checking every possibility for each element of the password, moving on when we find the correct character. The full python script can be found [here](./16_script.py), however the core of the script is as follows:
+Now, we can use this to crack the password by guessing checking every possibility for each element of the password, moving on when we find the correct character. The full python script can be found [here](./15.py), however the core of the script is as follows:
 
 ```python
 for i in range(1, password_length + 1):

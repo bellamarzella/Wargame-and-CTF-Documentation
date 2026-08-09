@@ -12,3 +12,4 @@ The first 11 levels are simple enough to be consolidated into tables, but starti
 | **11 → 12** | Weak Cryptography & Session Forgery (XOR) | [Natas 11 → 12](./levels/natas11-12/writeup.md) |
 | **12 → 13 → 14** | Unrestricted File Upload & Client-Controlled Enforcement | [Natas 12 → 13 → 14](./levels/natas12-13,14/writeup.md) |
 | **14 → 15 → 16** | SQL Injections | [Natas 14 → 15 → 16](./levels/natas14-15,16/writeup.md) |
+| **16 → 17** | OS Injections | [Natas 16 → 17](./levels/natas16-17/writeup.md) |
