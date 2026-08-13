@@ -9,4 +9,5 @@ A centralised repository dedicated to documenting my solutions, methodology, and
 | Platform | Challenge Series | Target Focus | Level Progress | Writeup Progress |
 | :--- | :--- | :--- | :--- | :--- |
 | **OverTheWire** | [Bandit](./over-the-wire/bandit/bandit.md) | Linux Basics | Completed! | Completed! |
-| **OverTheWire** | [Natas](./over-the-wire/natas/natas.md) | Web Security | 17 | Up to date |
+| **OverTheWire** | [Natas](./over-the-wire/natas/natas.md) | Web Security | 18/33 | Up To Date |
+| **PortSwigger Academy** | [SQL Injections](./portswigger/sql-injections/portswigger-sql.md) | SQL | 10/18 | Up to date |

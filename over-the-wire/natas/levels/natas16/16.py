@@ -4,7 +4,7 @@ import threading
 
 url = "http://natas16.natas.labs.overthewire.org/"
 charset = string.ascii_letters + string.digits
-this_password = "[NATAS16 PASSWORD]"
+this_password = "Xm6XEeRN3zsGjRDqBPmuqAVV65k7e3Gb"
 
 session = requests.Session()
 session.auth = ('natas16', this_password)
@@ -36,6 +36,6 @@ for i in range(1, 33):
     for t in threads:
         t.join() # Make sure they've all completed before we move on
     dots += '.'
-    print(f'Found character {i}. Password so far is {password}.')
+    print(f'Found character {i}. Password so far is {password}')
 
 print(password)

