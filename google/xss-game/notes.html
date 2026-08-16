@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Internal game scripts/styles, mostly boring stuff -->
+    <script src="/static/game-frame.js"></script>
+    <link rel="stylesheet" href="/static/game-frame-styles.css" />
+  </head>
+ 
+  <body id="level4">
+    <img src="/static/logos/level4.png" />
+    <br>
+    <form action="" method="GET">
+      <input id="timer" name="timer" value="3">
+      <input id="button" type="submit" value="Create timer"> </form>
+    </form>
+  </body>
+</html>
+
+class MainPage(webapp.RequestHandler):
+ 
+  def render_template(self, filename, context={}):
+    path = os.path.join(os.path.dirname(__file__), filename)
+    self.response.out.write(template.render(path, context))
+ 
+  def get(self):
+    # Disable the reflected XSS filter for demonstration purposes
+    self.response.headers.add_header("X-XSS-Protection", "0")
+ 
+    if not self.request.get('timer'):
+      # Show main timer page
+      self.render_template('index.html')
+    else:
+      # Show the results page
+      timer= self.request.get('timer', 0)
+      self.render_template('timer.html', { 'timer' : timer })
+     
+    return
+ 
+application = webapp.WSGIApplication([ ('.*', MainPage), ], debug=False)
+
+<!doctype html>
+<html>
+  <head>
+    <!-- Internal game scripts/styles, mostly boring stuff -->
+    <script src="/static/game-frame.js"></script>
+    <link rel="stylesheet" href="/static/game-frame-styles.css" />
+ 
+    <script>
+      function startTimer(seconds) {
+        seconds = parseInt(seconds) || 3;
+        setTimeout(function() { 
+          window.confirm("Time is up!");
+          window.history.back();
+        }, seconds * 1000);
+      }
+    </script>
+  </head>
+  <body id="level4">
+    <img src="/static/logos/level4.png" />
+    <br>
+    <img src="/static/loading.gif" onload="startTimer('{{ timer }}');" />
+    <br>
+    <div id="message">Your timer will execute in {{ timer }} seconds.</div>
+  </body>
+</html>
