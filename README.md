@@ -13,4 +13,4 @@ A centralised repository dedicated to documenting my solutions, methodology, and
 | **PortSwigger Academy** | [Cross Site Scripting](./portswigger/cross-site-scripting/levels/level1-10/writeup.md) | XSS | 2/18 | Up to date |
 | **OverTheWire** | [Bandit](./over-the-wire/bandit/bandit.md) | Linux Basics | Completed! | Completed! |
 | **OverTheWire** | [Natas](./over-the-wire/natas/natas.md) | Web Security | 18/33 | Up To Date |
-| **Google** |  [XSS Game](./google/xss-game/writeup.md) | XSS | 3/6 | Up To Date | 
+| **Google** |  [XSS Game](./google/xss-game/writeup.md) | XSS | Completed! | Completed! | 

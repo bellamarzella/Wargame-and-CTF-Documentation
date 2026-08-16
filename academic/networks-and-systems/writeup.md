@@ -1,5 +1,8 @@
 # Networks and Systems - Cybersecurity Submodule Coursework Writeup
 
+> [!NOTE]
+> This is a retroactive writeup of coursework from a while ago, there may be inconsistencies where I have forgotten the exact details of the challenge. There was also a word limit on the original submission, so some of the writeups are more concise than I would have liked. 
+
 ## 1. Caesar Cipher Cryptanalysis
 **Difficulty:** Low
 
