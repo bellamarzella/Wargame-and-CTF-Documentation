@@ -7,4 +7,4 @@ The first - levels are simple enough to be consolidated into tables, but startin
 
 | Levels | Vulnerability Focus | Writeup |
 | :--- | :--- | :--- |
-| **1 → 10** | SQLi Basics |  [Levels 1 → 10](./level/levels1-10/writeup.md) |
+| **1 → 10** | SQLi Basics |  [Levels 1 → 10](./levels/level1-10/writeup.md) |
