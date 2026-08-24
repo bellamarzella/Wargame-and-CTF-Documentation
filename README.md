@@ -15,3 +15,4 @@ A centralised repository dedicated to documenting my solutions, methodology, and
 | **OverTheWire** | [Natas](./over-the-wire/natas/natas.md) | Web Security | 18/33 | Up To Date |
 | **Google** |  [XSS Game](./google/xss-game/writeup.md) | XSS | Completed! | Completed! | 
 | **Homelab** | [BitPixie](./homelab/bitpixie/writeup.md) | BitLocker Bypass |  N/A | Completed! |
+| **HackTheBox Academy** | [Penetration Testing - Getting Started](./htb-academy/penetration-testing/getting-started/writeup.md) | Penetration Testing | 
