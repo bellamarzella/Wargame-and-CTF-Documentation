@@ -6,13 +6,13 @@ A centralised repository dedicated to documenting my solutions, methodology, and
 
 ## Progress
 
-| Platform | Challenge Series | Target Focus | Level Progress | Writeup Progress |
-| :--- | :--- | :--- | :--- | :--- |
-| **Coursework** | [Networks and Systems - Cybersecurity Submodule](./academic/networks-and-systems/writeup.md) | Application Security & Vulnerability Analysis | N/A | Completed! |
-| **PortSwigger Academy** | [SQL Injections](./portswigger/sql-injections/portswigger-sql.md) | SQLi | 10/18 | Up to date |
-| **PortSwigger Academy** | [Cross Site Scripting](./portswigger/cross-site-scripting/portswigger-xss.md) | XSS | 2/18 | Up to date |
-| **OverTheWire** | [Bandit](./over-the-wire/bandit/bandit.md) | Linux Basics | Completed! | Completed! |
-| **OverTheWire** | [Natas](./over-the-wire/natas/natas.md) | Web Security | 18/33 | Up To Date |
-| **Google** |  [XSS Game](./google/xss-game/writeup.md) | XSS | Completed! | Completed! | 
-| **Homelab** | [BitPixie](./homelab/bitpixie/writeup.md) | BitLocker Bypass |  N/A | Completed! |
-| **HackTheBox Academy** | [Penetration Testing - Getting Started](./htb-academy/penetration-testing/getting-started/writeup.md) | Penetration Testing | 
+| Platform | Challenge Series | Target Focus | Level Progress | Writeup Progress | Notes |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Coursework** | [Networks and Systems - Cybersecurity Submodule](./academic/networks-and-systems/writeup.md) | Application Security & Vulnerability Analysis | N/A | Completed! | - |
+| **PortSwigger Academy** | [SQL Injections](./portswigger/sql-injections/portswigger-sql.md) | SQLi | 10/18 | Up to date | - |
+| **PortSwigger Academy** | [Cross Site Scripting](./portswigger/cross-site-scripting/portswigger-xss.md) | XSS | 9/18 | Up to date | - |
+| **OverTheWire** | [Bandit](./over-the-wire/bandit/bandit.md) | Linux Basics | Completed! | Completed! | - |
+| **OverTheWire** | [Natas](./over-the-wire/natas/natas.md) | Web Security | 18/33 | Up To Date | - |
+| **Google** |  [XSS Game](./google/xss-game/writeup.md) | XSS | Completed! | Completed! | - |
+| **Homelab** | [BitPixie](./homelab/bitpixie/writeup.md) | BitLocker Bypass |  N/A | Completed! | - |
+| **HackTheBox Academy** | [Penetration Testing - Getting Started](./htb-academy/penetration-testing/getting-started/writeup.md) | Penetration Testing | In Progress | In Progress | Theory notes can be found at [this repo](https://github.com/bellamarzella/notes). |

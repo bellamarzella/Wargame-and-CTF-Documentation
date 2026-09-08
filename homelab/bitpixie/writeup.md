@@ -16,11 +16,11 @@ Target:
 
 The BitPixie attack works in two phases: first you grab a modified copy of the target's BCD boot configuration, then you PXE-boot the machine with it so the BitLocker Volume Master Key gets leaked from memory.
 
-**Phase 1: grab the BCD.** I booted the machine into WinRE (Shift+Restart → Command Prompt), connected to a small SMB share on my attacker box, and ran a script that exported and modified the BCD. It uploaded the modded BCD back to me.
+**Step 1: Grab the BCD.** I booted the machine into WinRE (Shift+Restart → Command Prompt), connected to a small SMB share on my attacker box, and ran a script that exported and modified the BCD. It uploaded the modded BCD back to me.
 
-**Phase 2: PXE boot.** With the modded BCD in place, I booted the target over the network. The boot chain (bootmgfw → shimx64 → grub → initramfs) dropped me into a minimal Linux environment.
+**Step 2: PXE boot.** With the modded BCD in place, I booted the target over the network. The boot chain (bootmgfw → shimx64 → grub → initramfs) dropped me into a minimal Linux environment.
 
-**Phase 3: unlock.** From there I ran the exploit to pull the VMK out of memory, decrypted the drive, and mounted it read-write. Full file system access. To demonstrate the impact, I reset the local Administrator password with `chntpw` and logged straight into Windows on the next boot.
+**Step 3: Unlock.** From there I ran the exploit to pull the VMK out of memory, decrypted the drive, and mounted it read-write. Full file system access. To demonstrate the impact, I reset the local Administrator password with `chntpw` and logged straight into Windows on the next boot.
 
 ## What I Did
 
