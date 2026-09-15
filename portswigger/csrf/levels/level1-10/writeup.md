@@ -1,0 +1,10 @@
+# Level 1 → x
+
+| Level | Description | Solution | Notes |
+| :--- | :--- | :--- | :--- | 
+| **1** | CSRF vulnerability with no defenses. | Use Burp Suite to view the email change request, paste it into [CSRFShark](https://csrfshark.github.io/app/) to generate an exploit page, add `<script>document.forms[0].submit()</script>` to automatically execute on page load. | | 
+| **2** | CSRF where token validation depends on request method. | Use Burp Suite to view the email change request, observe that it contains a CSRF token, which, when changed, causes the request to fail. Change the request method from `POST` to `GET` and observe that the request succeeds without a valid CSRF token. Once again construct a CSRF exploit page, ensuring we use `GET`. | |
+| **3** | CSRF where token validation depends on token being present. | This time the CSRF token is validated only if it is present in the request. We construct the payload website as before but completely omit the CSRF token from the request. | |
+| **4** | CSRF where token is not tied to user session. | The CSRF token is not tied to the user session, meaning the server issues a one-time-use valid token for each request. However, by using Burp Suite to intercept a request, we can capture a valid token, drop the request and then use the captured token to construct a CSRF exploit page. | |
+| **5** | CSRF where token is tied to non-session cookie. | The CSRF token is tied to a `csrfKey` parameter in a cookie issued to the client, not the session cookie. By logging in on an attacker account, we can harvest their `csrfKey` cookie and the corresponding CSRF token, inject the `csrfKey` cookie into the victim's browser, and then construct a CSRF exploit page. | |
+| **6** | CSRF where token is duplicated in cookie. | The server checks whether the CSRF token in the request body and cookie match. We simply inject an arbitrary CSRF token into the victim's cookie and then construct a CSRF exploit page with the same token in the request body. | |

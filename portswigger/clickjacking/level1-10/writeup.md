@@ -1,0 +1,7 @@
+# Level 1 → x
+
+| Level | Description | Solution | Notes |
+| :--- | :--- | :--- | :--- |
+| **1** | Basic clickjacking with CSRF token protection. | Log in as a victim, visit their account details and copy the URL. Create a new HTML page with an `<iframe>` pointing to the copied URL, and use styling to make it barely visible. Add a `<div>` with something enticing the victim to click on it, such as "Click here to win a prize!" and position it over the `<iframe>`. Once you've positioned it, you can make the `<iframe>` transparent and add a `z-index` to ensure the `<div>` is on top. When the victim clicks on the `<div>`, they will actually be clicking on the `<iframe>`, which will submit the form and delete their account. | It's very easy to delete your own account while testing, so don't do that! |
+| **2** | Clickjacking with form input data prefilled from a URL parameter. | Same as before, but this time we're changing email address and so need to prefill the form input. We can do this by appending `?email=victim@pwned` to the `<iframe>` URL. Otherwise the steps are the same as before. | These labs are generally super finicky, so I'd suggest making a PoC webpage, checking it works, then just copy the provided lab solution. |
+| **3** | Clickjacking with a frame busting script. | Inspect the code to find the code to find a framebusting script, construct PoC as before but include `sandbox=allow-forms` as an attribute of the `iframe`, preventing the framebuster from ever running. |  |
