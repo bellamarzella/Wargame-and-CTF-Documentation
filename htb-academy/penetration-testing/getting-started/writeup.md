@@ -117,7 +117,7 @@ Oh, disappointing :(. Actually, this must mean that the page checks that we aren
 ```php
 <?php if(!defined('IN_GS')){ die('you cannot load this page directly.'); }
 ```
-Aha, so that's the check. We could go through and figure out how this works, but does it actually matter? We know that `die('you cannot load this page directly.')`, so let's just replace it with a test payload:
+Aha, so that's the check. We could go through and figure out how this works, but does it actually matter? We know that `die('you cannot load this page directly.')` runs, so let's just replace it with a test payload:
 ```php
 <?php if(!defined('IN_GS')){ system('id'); }
 ```
@@ -171,5 +171,7 @@ At first, this looks promising, but the second half is concerning. This indicate
 Except we're being a little obtuse here. It's not just any file, it's `php`. We can run `php` code as `root`, which will definitely give us a way to gain a root shell.
 In fact, `system()` just lets us run Linux commands. So, we can run `sudo php -r "system('/bin/bash');"` to spawn a root shell!
 Finally, we read `/root/root.txt` to get our flag.
+
+>**Note:** *We almost definitely could've just used an existing exploit that we found earlier, but this was more fun, wasn't it :)* 
 
 

@@ -1,4 +1,4 @@
-# Level 1 → x
+# Level 1 → 6
 
 | Level | Description | Solution | Notes |
 | :--- | :--- | :--- | :--- | 
